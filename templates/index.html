@@ -1,0 +1,11 @@
+<header>
+    <a href = "{% url 'new_post' %}"> Create new post </a>
+</header>
+
+<div>
+    {% for post in object_list %}
+        <a href = "{% url 'post_detail' post.id %}">
+            <img src = "/{{ post.image }}" width = 150 height = 150>
+        </a>
+    {% endfor %}
+</div>
