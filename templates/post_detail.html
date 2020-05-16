@@ -1,5 +1,8 @@
 <span> {{ object.title }} </span>
 <div>
     <img src = "/{{ object.image }}">
-    <a href="{% url 'edit_post' object.id %}">Edit</a>
+    <div>
+        <a href="{% url 'edit_post' object.id %}">Edit</a>
+        <a href="{% url 'delete_post' object.id %}">Delete</a>
+    </div>
 </div>
