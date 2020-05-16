@@ -1,29 +1,6 @@
-<header>
-    <div>
-        <ul>
-        {% if request.user.is_authenticated %}
-        <li>
-            <p>{{request.user.username}}</p>
-        </li>
-        <li>
-            <a href = "{% url 'logout' %}">Sign out</a>
-        </li>
-        {% else %}
-        <li>
-            <a href = "{% url 'login' %}">Sign in</a>
-        </li>
-        <li>
-            <a href = "{% url 'sign_up' %}">Sign up</a>
-        </li>
-        {% endif %}
-        </ul>
-    </div>
+{% extends "header.html" %}
 
-    <div>
-        <a href = "{% url 'new_post' %}"> Create new post </a>
-    </div>
-</header>
-
+{% block content %}
 <div>
     {% for post in object_list %}
         <a href = "{% url 'post_detail' post.id %}">
@@ -31,3 +8,4 @@
         </a>
     {% endfor %}
 </div>
+{% endblock content %}

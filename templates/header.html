@@ -1,0 +1,33 @@
+<div class = "navbar navbar-default navbar-fixed-top" id="main-nav">
+    <div class = "container desktop">
+        <div class = "navbar-header">
+            <a href = "/" class = "navbar-brand">DIY Insta</a>
+        </div>
+
+        <div id = "navbar-main">
+            <ul class = "nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <a href = "{% url 'postsList' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href = "{% url 'make_post' %}">New post </a>
+                    </li>
+                    <li>
+                        <a href = "{% url 'logout' %}">Log out</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href = "{% url 'login' %}">Sign in</a>
+                    </li>
+                    <li>
+                        <a href = "{% url 'sign_up' %}">Sign up</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% block content %} # We want to find a block called 'content'.
+{% endblock content %}
