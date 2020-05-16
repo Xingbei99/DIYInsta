@@ -73,6 +73,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'diy_insta.wsgi.application'
 
+LOGIN_REDIRECT_URL = 'postsList'
+LOGOUT_REDIRECT_URL = 'postsList'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

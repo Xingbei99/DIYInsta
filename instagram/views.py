@@ -1,7 +1,13 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from instagram.models import Post
 from django.urls import reverse_lazy
+
+class signUpView(CreateView):
+    form_class = UserCreationForm
+    template_name = 'sign_up.html'
+    success_url = reverse_lazy('login')
 
 #TemplateView renders html.
 class listOfPostsView(ListView):

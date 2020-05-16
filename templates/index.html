@@ -1,5 +1,27 @@
 <header>
-    <a href = "{% url 'new_post' %}"> Create new post </a>
+    <div>
+        <ul>
+        {% if request.user.is_authenticated %}
+        <li>
+            <p>{{request.user.username}}</p>
+        </li>
+        <li>
+            <a href = "{% url 'logout' %}">Sign out</a>
+        </li>
+        {% else %}
+        <li>
+            <a href = "{% url 'login' %}">Sign in</a>
+        </li>
+        <li>
+            <a href = "{% url 'sign_up' %}">Sign up</a>
+        </li>
+        {% endif %}
+        </ul>
+    </div>
+
+    <div>
+        <a href = "{% url 'new_post' %}"> Create new post </a>
+    </div>
 </header>
 
 <div>
