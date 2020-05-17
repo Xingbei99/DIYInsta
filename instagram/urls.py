@@ -5,6 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from instagram.views import signUpView, listOfPostsView, postDetailView, postCreateView, postEditView, postDeleteView
 
+#Configures app-level urls.
+
 urlpatterns = [
     # We have mapped instagram/ to instagram.urls in project-level url file so that entering instagram/ enables us to jump in instagram.urls.
     path('', listOfPostsView.as_view(), name = 'postsList'),
