@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from imagekit.models import ProcessedImageField
 from django.contrib.auth.models import AbstractUser
-# Create your models here.
+# Defines models of the MVC pattern.
 
 class Post(models.Model):
     # Django field offers different field options
