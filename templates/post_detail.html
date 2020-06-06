@@ -1,3 +1,6 @@
+{% extends "header.html" %}
+
+{% block content %}
 <span> {{ object.title }} </span>
 <div>
     <img src = "/{{ object.image }}">
@@ -6,3 +9,4 @@
         <a href="{% url 'delete_post' object.id %}">Delete</a>
     </div>
 </div>
+{% endblock content %}
