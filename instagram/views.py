@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from instagram.models import Post
 from django.urls import reverse_lazy
 
+# Defines views of the MVC pattern.
+
 class signUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'sign_up.html'

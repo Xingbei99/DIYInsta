@@ -1,3 +1,5 @@
+# Administrator for the django application.
+
 from django.contrib import admin
 from instagram.models import Post
 
