@@ -1,11 +1,18 @@
 {% extends "header.html" %}
 
 {% block content %}
-<div>
-    {% for post in object_list %}
-        <a href = "{% url 'post_detail' post.id %}">
-            <img src = "/{{ post.image }}" width = 150 height = 150>
-        </a>
-    {% endfor %}
-</div>
+    <div>
+       <div class="row">
+           {% for post in object_list %}
+               <div class="col-lg-6">
+                   <a href = "{% url 'post_detail' post.id %}">
+                       <img src = "/{{ post.image }}" width = 200 height = 200>
+                   </a>
+                </div>
+           {% endfor %}
+       </div>
+    </div>
 {% endblock content %}
+
+
+
