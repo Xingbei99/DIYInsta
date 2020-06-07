@@ -2,12 +2,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from instagram.models import Post
+from instagram.customized_form import MyUserCreationForm
 from django.urls import reverse_lazy
 
 # Defines views of the MVC pattern.
 
 class signUpView(CreateView):
-    form_class = UserCreationForm
+    form_class = MyUserCreationForm
     template_name = 'sign_up.html'
     success_url = reverse_lazy('login')
 
