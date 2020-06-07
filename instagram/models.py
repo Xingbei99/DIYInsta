@@ -14,6 +14,9 @@ class User(AbstractUser):
         null=True,
     )
 
+    def __str__(self):
+        return self.username
+
 # Model defining a post
 class Post(models.Model):
     # Django field offers different field options

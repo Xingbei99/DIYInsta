@@ -1,18 +1,35 @@
+<!-- Main page: display all the posts in a grid view -->
 {% extends "header.html" %}
 
 {% block content %}
     <div>
        <div class="row">
            {% for post in object_list %}
-               <div class="col-lg-6">
-                   <a href = "{% url 'post_detail' post.id %}">
-                       <img src = "/{{ post.image }}" width = 200 height = 200>
-                   </a>
-                </div>
+               <!-- lay each post in a separate row -->
+               <div class="row">
+                   <!-- apply the card format to each post -->
+                   <div class="card {{ post.pk }}">
+                       <div class="post_header">
+                           <!-- display the author avatar and username in header of the post -->
+                           {% if post.creator.user_avatar %}
+                               <img class="post_creator_avatar" src="/{{ post.creator.user_avatar.url }}" width=30 height=30>
+                           {% endif %}
+                           {{ post.creator.username }}
+                       </div>
+
+                       <div class="post_body">
+                           <a href = "{% url 'post_detail' post.id %}">
+                               <img src = "/{{ post.image }}" width=200 height=200>
+                           </a>
+                       </div>
+                   </div>
+               </div>
            {% endfor %}
        </div>
     </div>
 {% endblock content %}
+
+
 
 
 
